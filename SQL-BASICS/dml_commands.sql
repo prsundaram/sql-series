@@ -79,4 +79,28 @@ select * from students;
 
 delete from students where id = 8;
 
+-- Insert 20 students (id auto-incremented)
+INSERT INTO students (student_name, city, age) VALUES
+('Sundar Raj', 'Chennai', 22),
+('Priya Kumar', 'Delhi', 20),
+('Anil Sharma', 'Mumbai', 23),
+('Meena Sundaram', 'Chennai', 21),
+('Rajesh Gupta', 'Kolkata', 22),
+('Kavya R', 'Bengaluru', 19),
+('Vikram Das', 'Delhi', 24),
+('Ananya Iyer', 'Chennai', 22),
+('Rohit Mehta', 'Mumbai', 21),
+('Deepa Nair', 'Kochi', 20),
+('Arjun Reddy', 'Hyderabad', 23),
+('Sneha Kapoor', 'Delhi', 25),
+('Nikhil Verma', 'Pune', 21),
+('Divya Menon', 'Chennai', 24),
+('Gaurav Singh', 'Kolkata', 22),
+('Shreya S', 'Bengaluru', 20),
+('Manoj Pillai', 'Kochi', 23),
+('Varun Patil', 'Pune', 19),
+('Lakshmi Narayan', 'Hyderabad', 24),
+('Neha Joshi', 'Mumbai', 22);
+
+
 commit;
