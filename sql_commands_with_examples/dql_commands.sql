@@ -56,18 +56,20 @@ SELECT student_name FROM students WHERE student_name LIKE '_eena%';
 -- ===========================================================
 
 -- ORDER BY age ascending.
-SELECT student_name, age FROM students ORDER BY age ASC;
+SELECT student_name, age FROM students ORDER BY age;
 
 -- ORDER BY multiple: first sort by age descending, then by name ascending (tie-breaker).
 -- Primary sort: age DESC → highest age first, lowest last.
 -- Secondary sort (tie-breaker): student_name ASC → alphabetical order within same age.
-SELECT student_name, age FROM students ORDER BY age DESC, student_name ASC;
+SELECT student_name, age FROM students ORDER BY age DESC, student_name;
 
 -- LIMIT: first 5 rows (ordered by id for consistency).
-SELECT * FROM students ORDER BY id ASC LIMIT 5;
+SELECT *FROM students ORDER BY id
+LIMIT 5;
 
 -- LIMIT + OFFSET: skip 5 rows, show next 5 (rows 6–10).
-SELECT * FROM students ORDER BY id ASC LIMIT 5 OFFSET 5;
+SELECT *FROM students ORDER BY id
+LIMIT 5 OFFSET 5;
 
 -- ===========================================================
 -- DISTINCT VALUES
@@ -160,7 +162,7 @@ SELECT student_name, age, RANK() OVER (ORDER BY age DESC) AS rank_age FROM stude
 SELECT student_name, age, DENSE_RANK() OVER (ORDER BY age DESC) AS dense_rank_age FROM students;
 
 -- ROW_NUMBER: assign unique row numbers regardless of ties.
-SELECT student_name, age, ROW_NUMBER() OVER (ORDER BY age DESC, student_name ASC) AS rn FROM students;
+SELECT student_name, age, ROW_NUMBER() OVER (ORDER BY age DESC, student_name) AS rn FROM students;
 
 -- PARTITION BY: rank students within each city.
 -- Rank students within each city based on age (highest age = rank 1).
@@ -280,7 +282,7 @@ FROM (
        SELECT city, student_name, age,
               ROW_NUMBER() OVER (
                    PARTITION BY city                  -- restart numbering for each city
-                   ORDER BY age DESC, student_name ASC -- order: highest age first,
+                   ORDER BY age DESC, student_name -- order: highest age first,
                                                      -- if same age, use name A→Z
               ) AS rn
        FROM students

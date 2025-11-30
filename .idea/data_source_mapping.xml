@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourcePerFileMappings">
+    <file url="file://$PROJECT_DIR$/sql_commands_with_examples/ddl_commands.sql" value="4e3d0340-c698-4d96-9945-1f26b57bf3fb" />
+    <file url="file://$PROJECT_DIR$/sql_commands_with_examples/dml_commands.sql" value="4e3d0340-c698-4d96-9945-1f26b57bf3fb" />
+    <file url="file://$PROJECT_DIR$/sql_commands_with_examples/dql_commands.sql" value="4e3d0340-c698-4d96-9945-1f26b57bf3fb" />
+  </component>
+</project>
